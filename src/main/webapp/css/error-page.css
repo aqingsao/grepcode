@@ -1,0 +1,52 @@
+.wrapper {
+  padding-top: 100px;
+}
+
+.page-error-box {
+  width: 650px;
+  margin: 0 auto;
+}
+
+.page-error-box-left {
+  float: left;
+}
+
+.page-error-box-right {
+  float: left;
+  padding: 20px;
+}
+
+.page-error-box-right h1{
+  font-size: 22px;
+
+}
+
+.page-error-box-right p{
+  font-size: 14px;
+  margin-top: 20px;
+
+}
+
+.page-error-box-right a{
+  line-height: 40px;
+  font-size: 12px;
+  color: #075689;
+  text-decoration: none;
+}
+
+.page-error-box-right a:hover{
+  color: #666666;
+}
+
+.page-error-box-left label{
+  display: block;
+  background: #075689;
+  vertical-align: middle;
+  color: #FFF;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 48px 40px;
+
+}
+
+
