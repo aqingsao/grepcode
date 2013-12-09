@@ -1,0 +1,47 @@
+<div id="footer">
+  <div class="container_16">
+    <div class="footer-section alpha">
+      <label>怎样购买</label>
+      <ul>
+        <li><a href="/p2p/page/help/help.html?view=purchase-qualification">购买资格</a></li>
+        <li><a href="/p2p/page/help/help.html?view=purchase-process">购买过程</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <label>网站介绍</label>
+      <ul>
+        <li><a href="/p2p/page/help/help.html?view=history">历史</a></li>
+        <li><a href="/p2p/page/help/help.html?view=company">公司</a></li>
+        <li><a href="/p2p/page/help/help.html?view=partners">合作网站</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <label>产品介绍</label>
+      <ul>
+        <li><a href="/p2p/page/help/help.html?view=product-introduction">基本信息</a></li>
+        <li><a href="/p2p/page/help/help.html?view=profit">收益</a></li>
+        <li><a href="/p2p/page/help/help.html?view=product-comparison">产品比较</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <label>安全性</label>
+      <ul>
+        <li><a href="/p2p/page/help/help.html?view=website-security">网站安全</a></li>
+        <li><a href="/p2p/page/help/help.html?view=legality">交易合法性</a></li>
+        <li><a href="/p2p/page/help/help.html?view=guarantee">资金担保</a></li>
+        <li><a href="/p2p/page/help/help.html?view=trading-security">投资安全</a></li>
+      </ul>
+    </div>
+    <div class="footer-wide-section last omega">
+      <label>联系我们</label>
+
+      <p>服务热线8：00-22：00</p>
+
+      <div class="hotline">400 166 6618</div>
+      <small>版权所有 © 中国平安保险（集团）股份有限公司</small>
+      <small>未经许可不得复制、转载或摘编，违者必究!</small>
+      <small>Copyright © PING AN INSURANCE (GROUP) COMPANY OF CHINA ,LTD. All Rights Reserved</small>
+      <small>ICP许可证号 粤ICP备06118290号</small>
+    </div>
+  </div>
+</div>

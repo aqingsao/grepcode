@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>$pageTitle</title>
+  <meta name="keywords" content="$keywords">
+  <meta name="description" content=$description>
+  <meta name="WT.pn_sku" content="$!wt_pn_sku">
+  <meta name="WT.page_name" content="$!wt_page_name">
+  <link type="text/css" href="#springUrl('/css/reset.css')" rel="stylesheet">
+  <link type="text/css" href="#springUrl('/css/960.css')" rel="stylesheet">
+  #foreach($style in $styles)
+    <link type="text/css" href="#springUrl($style)" rel="stylesheet">
+  #end
+
+</head>
+<body>
+
+  <div class="wrapper container_16">
+    #parse("layout/header.vm")
+    <div id="content" class="grid_16 alpha omega">
+      $screen_content
+    </div>
+  </div>
+
+  #parse("layout/footer.vm")
+  <script type="text/javascript" src="#springUrl('js/jquery-2.0.3.min.js')"></script>
+  #foreach($script in $scripts)
+  <script type="text/javascript" src="#springUrl($script)"></script>
+  #end
+</body>
+</html>

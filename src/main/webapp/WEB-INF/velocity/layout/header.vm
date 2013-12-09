@@ -1,0 +1,41 @@
+<div id="header" class="container_16">
+  <ul class="products">
+    <li class="product-block P2P selected">
+      <a href=#springUrl("/")><p><em title="稳盈">稳&nbsp;盈</em></p></a>
+    </li>
+    <li class="product-block commodity"><em title="贵金属"></em></li>
+    <li class="product-block SME"><em title="中小企"></em></li>
+    <li class="product-block supermarket"><em title="金融超市"></em></li>
+
+  </ul>
+
+  <ul id="userIdentity" class="callout">
+    #if($!user)
+      <span class="user-identity-item icon-welcome last">您好: $!user.username</span>
+      <span class="user-identity-item icon-profile"><a href="/p2p/user-info" onclick="">我的资料</a></span>
+                    <span class="user-identity-item icon-verify">
+                      #if($isInformedFlag)
+                        <a href="#springUrl("/bank-bind?isInformedFlag=true")">认证中心</a>
+                      #else
+                        <a href="#springUrl("/memberAuthentication?action=021")">认证中心</a>
+                      #end
+                    </span>
+      <span class="user-identity-item icon-recharge last"><a href="/p2p/recharge" onclick="">充值</a></span>
+      <span class="user-identity-item icon-withdraw"><a href="/p2p/withdraw" onclick="">取现</a></span>
+      <span id="logout" class="user-identity-item icon-logout last"><a href="#springUrl('/logout')" onclick="">安全退出</a></span>
+    #else
+      <span class="user-identity-item icon-house"><a href="#springUrl('/')" onClick="">首页</a></span>
+      <span class="user-identity-item icon-action"><a href="#springUrl('/register?type=021')">免费注册</a></span>
+      <span class="user-identity-item icon-login last"><a href="#springUrl('/loginFromMember')" otype="button" otitle="请登录">请登录</a></span>
+    #end
+  </ul>
+
+  <ul class="navigation tabs">
+    <li><a href="#springUrl('/account')" class="$!overviewIsCurrent">我的账户</a></li>
+    <li class="seperator"></li>
+    <li><a class="$!listingIsCurrent" id="investListing" href="#springUrl('/listing')" otype="button" otitle="我要投资">我要投资</a></li>
+    <li class="seperator"></li>
+    <li class="last"><a class="$!loanApplicationIsCurrent" href="#springUrl('/loan-application')" otype="button" otitle="我要贷款">我要贷款</a></li>
+  </ul>
+</div>
+
