@@ -43,10 +43,10 @@
         <error-code>404</error-code>
         <location>/notFound.html</location>
     </error-page>
-    <error-page>
-        <error-code>500</error-code>
-        <location>/error.html</location>
-    </error-page>
+    <!--<error-page>-->
+        <!--<error-code>500</error-code>-->
+        <!--<location>/error.html</location>-->
+    <!--</error-page>-->
 
     <!-- Disables Servlet Container welcome file handling. Needed for compatibility with Servlet 3.0 and Tomcat 7.0 -->
     <welcome-file-list>
