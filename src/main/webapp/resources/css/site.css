@@ -43,24 +43,24 @@ body {
 div#header {
 	min-width: 1260px;
 	height: 80px;
-	background: url( '../images/header-bg.gif' ) repeat-x;
+	/*background: url( '../images/header-bg.gif' ) repeat-x;*/
 }
 
 .head-outer {
-	display: table; #
+	display: table;
 	display: block;
 	height: 80px;
-	position: static; #
+	position: static;
 	position: relative;
 	overflow: hidden;
 }
 
-.head-middle { #
+.head-middle {
 	top: 50%;
-	display: table-cell; #
+	display: table-cell;
 	display: block;
 	vertical-align: middle;
-	position: static; #
+	position: static;
 	position: absolute;
 }
 

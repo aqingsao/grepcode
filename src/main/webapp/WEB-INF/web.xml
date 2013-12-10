@@ -31,22 +31,22 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>*.html</url-pattern>
-        <url-pattern>/css/*</url-pattern>
-        <url-pattern>/js/*</url-pattern>
-        <url-pattern>/images/*</url-pattern>
-    </servlet-mapping>
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>default</servlet-name>-->
+        <!--<url-pattern>*.html</url-pattern>-->
+        <!--<url-pattern>/resources.css/*</url-pattern>-->
+        <!--<url-pattern>/resources.js/*</url-pattern>-->
+        <!--<url-pattern>/resources.images/*</url-pattern>-->
+    <!--</servlet-mapping>-->
 
     <error-page>
         <error-code>404</error-code>
-        <location>/notFound.html</location>
+        <location>/resources/notFound.html</location>
     </error-page>
-    <!--<error-page>-->
-        <!--<error-code>500</error-code>-->
-        <!--<location>/error.html</location>-->
-    <!--</error-page>-->
+    <error-page>
+        <error-code>500</error-code>
+        <location>/resources/error.html</location>
+    </error-page>
 
     <!-- Disables Servlet Container welcome file handling. Needed for compatibility with Servlet 3.0 and Tomcat 7.0 -->
     <welcome-file-list>
