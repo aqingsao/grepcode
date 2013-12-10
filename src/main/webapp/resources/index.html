@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="grepcode">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Grep Code</title>
@@ -7,7 +7,7 @@
   <link type="text/resources.css" href="css/960.css" rel="stylesheet"/>
   <link type="text/resources.css" href="css/site.css" rel="stylesheet"/>
 </head>
-<body ng-app="grepcode">
+<body>
 <div id="header">
   <div class="head-search">
     <div class="head-outer">
@@ -43,17 +43,13 @@
     <div id="search" ng-controller="SearchCtrl">
       <div class="search-wrapper">
         <div class="search-panel">
-          <form action="" id="id1" method="post" ng-submit="search()">
-            <div style="display:none">
-              <input type="hidden" name="id1_hf_0" id="id1_hf_0">
-            </div>
+          <form ng-submit="search()">
             <span id="query-container">
               <input id="search-field" type="text" name="query">
             </span>
             <div class="controls-panel">
-              <input type="submit" value="Search" name=":submit" id="id2">
+              <input type="submit" value="Search" name=":submit">
             </div>
-            <span style="display:none;" id="search-field-focus-flag">true</span>
           </form>
         </div>
       </div>
@@ -63,5 +59,6 @@
 
 <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
 <script type="text/javascript" src="js/angular-1.2.4.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
