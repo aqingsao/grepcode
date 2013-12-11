@@ -16,7 +16,7 @@ module.exports = function(config) {
     files: [
         'main/webapp/resources/js/*.js',
         'test/js/lib/*.js',
-        'test/js/*Spec.js'
+        'test/js/*-spec.js'
     ],
 
     // list of files to exclude
