@@ -25,3 +25,17 @@ app.controller('SearchCtrl', function($scope){
     console.log("hi");
   }
 });
+
+app.controller("DetailCtrl", function($scope){
+   $scope.source = {
+     jar: {
+       name: "commons-lang3",
+       version: "3.0"
+     },
+     package: "org.apache.commons",
+     className: "StringUtils",
+     qualifiedName: function(){
+        return this.package + "." + this.className;
+     }
+   }
+});
