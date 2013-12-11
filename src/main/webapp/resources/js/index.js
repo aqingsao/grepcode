@@ -26,6 +26,37 @@ app.controller('SearchCtrl', function($scope){
   }
 });
 
+var Jar = function(name, version){
+  this.name = name;
+  this.version = version;
+  this.packages = [];
+}
+Jar.prototype.addPackage = function(package){
+  package.jar = this;
+  this.packages.push(package);
+}
+var Package = function(name){
+  this.name = name;
+  this.classes = [];
+}
+Package.prototype.addClass = function(clz){
+  clz.package = this;
+  this.classes.push(clz);
+}
+var Class = function(name){
+  this.name = name;
+  this.methods = [];
+  this.fields = [];
+}
+Class.prototype.qualifiedName = function(){
+  return this.package.name + "." + this.name;
+}
+Class.prototype.addMethod = function(method){
+  this.methods.push(method);
+}
+Class.prototype.addField = function(field){
+  this.fields.push(field);
+}
 var Method = function(accessType, modifiers, name, returnType, arguments){
   this.accessType = accessType;
   this.modifiers = modifiers;
@@ -47,36 +78,30 @@ Field.prototype.getTitle = function(){
 }
 
 app.controller("DetailCtrl", function($scope){
-   $scope.source = {
-     jar: {
-       name: "commons-lang3",
-       version: "3.0"
-     },
-     class: {
-       package: "org.apache.commons",
-       name: "StringUtils",
-       qualifiedName: function(){
-         return this.package + "." + this.name;
-       }
-     },
-     methods: [
-       new Method('public', ['static', 'final'], "trim", "String", ["String", "int"]),
-       new Method('private', ['static'], "trimToEmpty", "String", []),
-       new Method('protected', ['final'], "abbreviate", "String", ["Pattern"]),
-       new Method('public', [], "length", "int", [])
-     ],
-     fields: [
-       new Field('public', ['static', 'final'], "EMPTY", "String"),
-       new Field('private', [], "INDEX_NOT_FOUND", "int")
-     ]
-   },
-   $scope.paddingLeft = function(modifiersCount){
-     if(modifiersCount == 0){
-       return "29";
-     }
-     if(modifiersCount == 1){
-       return "16";
-     }
-     return "3";
-   }
+  var jar = new Jar("commons-lang3", "3.0");
+  var package = new Package("org.apache.commons");
+  var clz = new Class("StringUtils");
+  clz.addMethod(new Method('public', ['static', 'final'], "trim", "String", ["String", "int"]));
+  clz.addMethod(new Method('private', ['static'], "trimToEmpty", "String", []));
+  clz.addMethod(new Method('protected', ['final'], "abbreviate", "String", ["Pattern"]));
+  clz.addMethod(new Method('public', [], "length", "int", []));
+  clz.addField(new Field('public', ['static', 'final'], "EMPTY", "String"));
+  clz.addField(new Field('private', [], "INDEX_NOT_FOUND", "int"));
+  package.addClass(clz);
+  jar.addPackage(package);
+
+  console.log(jar);
+  console.log(package);
+  console.log(clz);
+  $scope.source = clz;
+
+  $scope.paddingLeft = function(modifiersCount){
+    if(modifiersCount == 0){
+     return "29";
+    }
+    if(modifiersCount == 1){
+     return "16";
+    }
+    return "3";
+  }
 });

@@ -51,13 +51,13 @@
       <li><a href="http://repo1.maven.org/maven2/" rel="nofollow" class="external-link">Maven-Central</a></li>
       <li><span class="entity-nav-delim">/</span></li>
       <li><a href="/"><span
-        title="{{source.package}} / {{source.jar.name}}">{{source.class.package}} / {{source.jar.name}}</span></a></li>
+        title="{{source.package.name}} / {{source.package.jar.name}}">{{source.package.name}} / {{source.package.jar.name}}</span></a></li>
       <li><span class="entity-nav-delim">/</span></li>
       <li>
-        <a title="Version" href="/"><span id="current-snapshot">{{source.jar.version}}</span></a>
+        <a title="Version" href="/"><span id="current-snapshot">{{source.package.jar.version}}</span></a>
       </li>
       <li><span class="entity-nav-delim">/</span></li>
-      <li><span class="entity-name" title="{{source.class.qualifiedName()}}">{{source.class.qualifiedName()}}</span></li>
+      <li><span class="entity-name" title="{{source.qualifiedName()}}">{{source.qualifiedName()}}</span></li>
     </ul>
   </div>
 </div>
@@ -74,8 +74,8 @@
             <div>
               <div>
                 <div class="outline">
-                  <img class="img_base img_jdt_obj16_package_obj" src="images/1x1.gif" border="0" title="Package" width="16" height="16">&nbsp;<span class="code">{{source.class.package}}</span><br>
-                  <img class="img_base img_jdt_obj16_class_obj" src="images/1x1.gif" border="0" title="Class" width="16" height="16"><img class="img_base img_transparent_1_16" src="images/1x1.gif" border="0" style="padding:3px 0px 0px 3px;" width="16" height="16"><a href="/file/repo1.maven.org/maven2/org.apache.commons/commons-lang3/3.0/org/apache/commons/lang3/StringUtils.java#StringUtils" title="public class StringUtils"><span class="code">{{source.class.name}}</span></a><br>
+                  <img class="img_base img_jdt_obj16_package_obj" src="images/1x1.gif" border="0" title="Package" width="16" height="16">&nbsp;<span class="code">{{source.package.name}}</span><br>
+                  <img class="img_base img_jdt_obj16_class_obj" src="images/1x1.gif" border="0" title="Class" width="16" height="16"><img class="img_base img_transparent_1_16" src="images/1x1.gif" border="0" style="padding:3px 0px 0px 3px;" width="16" height="16"><a href="/file/repo1.maven.org/maven2/org.apache.commons/commons-lang3/3.0/org/apache/commons/lang3/StringUtils.java#StringUtils" title="public class StringUtils"><span class="code">{{source.name}}</span></a><br>
 
                   <nobr ng-repeat="method in source.methods"><img class="img_base img_transparent_16_16" src="images/1x1.gif" border="0" width="16" height="16"><img class="img_base img_jdt_elcl16_{{method.accessType}}_co" src="images/1x1.gif" border="0" title="{{method.accessType}} Method" width="16" height="16"><sup ng-repeat="modifier in method.modifiers"><img class="img_base img_jdt_ovr16_{{modifier}}_co" src="images/1x1.gif" border="0" title="{{modifier}}" width="7" height="7"></sup><img class="img_base img_transparent_1_16" src="images/1x1.gif" border="0" style="padding:0px 0px 0px {{paddingLeft(method.modifiers.length)}}px;" width="16" height="16"><a href="/" title="{{method.getTitle()}}"><span class="code">{{method.name}}({{method.arguments.join(', ')}})<span class="returnType"> : {{method.returnType}}</span></span></a><br></nobr>
 
