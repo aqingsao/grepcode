@@ -32,10 +32,12 @@ app.controller("DetailCtrl", function($scope){
        name: "commons-lang3",
        version: "3.0"
      },
-     package: "org.apache.commons",
-     className: "StringUtils",
-     qualifiedName: function(){
-        return this.package + "." + this.className;
+     class: {
+       package: "org.apache.commons",
+       name: "StringUtils",
+       qualifiedName: function(){
+         return this.package + "." + this.name;
+       }
      }
    }
 });
