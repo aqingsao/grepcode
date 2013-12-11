@@ -26,57 +26,6 @@ app.controller('SearchCtrl', function($scope){
   }
 });
 
-var Jar = function(name, version){
-  this.name = name;
-  this.version = version;
-  this.packages = [];
-}
-Jar.prototype.addPackage = function(package){
-  package.jar = this;
-  this.packages.push(package);
-}
-var Package = function(name){
-  this.name = name;
-  this.classes = [];
-}
-Package.prototype.addClass = function(clz){
-  clz.package = this;
-  this.classes.push(clz);
-}
-var Class = function(name){
-  this.name = name;
-  this.methods = [];
-  this.fields = [];
-}
-Class.prototype.qualifiedName = function(){
-  return this.package.name + "." + this.name;
-}
-Class.prototype.addMethod = function(method){
-  this.methods.push(method);
-}
-Class.prototype.addField = function(field){
-  this.fields.push(field);
-}
-var Method = function(accessType, modifiers, name, returnType, arguments){
-  this.accessType = accessType;
-  this.modifiers = modifiers;
-  this.name = name;
-  this.returnType = returnType;
-  this.arguments = arguments;
-};
-Method.prototype.getTitle = function(){
-  return [this.accessType, this.modifiers.join(" "), this.returnType, this.name, "(", this.arguments.join(" "), ")"].join(" ");
-}
-var Field = function(accessType, modifiers, name, returnType){
-  this.accessType = accessType;
-  this.modifiers = modifiers;
-  this.name = name;
-  this.returnType = returnType;
-};
-Field.prototype.getTitle = function(){
-  return [this.accessType, this.modifiers.join(" "), this.returnType, this.name].join(" ");
-}
-
 app.controller("DetailCtrl", function($scope){
   var jar = new Jar("commons-lang3", "3.0");
   var package = new Package("org.apache.commons");
@@ -90,9 +39,6 @@ app.controller("DetailCtrl", function($scope){
   package.addClass(clz);
   jar.addPackage(package);
 
-  console.log(jar);
-  console.log(package);
-  console.log(clz);
   $scope.source = clz;
 
   $scope.paddingLeft = function(modifiersCount){
