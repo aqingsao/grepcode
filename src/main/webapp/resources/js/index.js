@@ -28,16 +28,14 @@ app.controller('SearchCtrl', function($scope){
 
 app.controller("DetailCtrl", function($scope){
   var jar = new Jar("commons-lang3", "3.0");
-  var package = new Package("org.apache.commons");
-  var clz = new Class("StringUtils");
+  var clz = new Class("StringUtils", "org.apache.commons");
   clz.addMethod(new Method('public', ['static', 'final'], "trim", "String", ["String", "int"]));
   clz.addMethod(new Method('private', ['static'], "trimToEmpty", "String", []));
   clz.addMethod(new Method('protected', ['final'], "abbreviate", "String", ["Pattern"]));
   clz.addMethod(new Method('public', [], "length", "int", []));
   clz.addField(new Field('public', ['static', 'final'], "EMPTY", "String"));
   clz.addField(new Field('private', [], "INDEX_NOT_FOUND", "int"));
-  package.addClass(clz);
-  jar.addPackage(package);
+  jar.addClass(clz);
 
   $scope.source = clz;
 
