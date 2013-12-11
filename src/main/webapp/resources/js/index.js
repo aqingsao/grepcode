@@ -38,6 +38,19 @@ app.controller("DetailCtrl", function($scope){
        qualifiedName: function(){
          return this.package + "." + this.name;
        }
+     },
+     methods: [
+       {accessType: 'public', modifiers: ['static', 'final']},
+       {accessType: 'private', modifiers: []}
+     ]
+   },
+   $scope.paddingLeft = function(modifiersCount){
+     if(modifiersCount == 0){
+       return "29";
      }
+     if(modifiersCount == 1){
+       return "16";
+     }
+     return "3";
    }
 });
